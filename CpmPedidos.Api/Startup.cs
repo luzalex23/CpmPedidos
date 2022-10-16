@@ -9,32 +9,42 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Npgsql;
+using CpmPedidos.Repositorie.Common;
 
 namespace CpmPedidos.Api
 {
     public class Startup
     {
+        public DbConnection DbConnection => new NpgsqlConnection(Configuration.GetConnectionString("App"));
+        public IConfiguration Configuration { get; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<AppDbContext>(options =>
+            options.UseNpgsql(
+                DbConnection,
+                assembly => assembly.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName)
+                ));
             DependecyInjection.Register(services);
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CpmPedidos.Api", Version = "v1" });
             });
+
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

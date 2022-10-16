@@ -15,3 +15,6 @@ C:\Users\alex_\source\repos\CpmPedidos\CpmPedidos.Repositorie\obj\Debug\net5.0\C
 C:\Users\alex_\source\repos\CpmPedidos\CpmPedidos.Repositorie\obj\Debug\net5.0\CpmPedidos.Repositorie.dll
 C:\Users\alex_\source\repos\CpmPedidos\CpmPedidos.Repositorie\obj\Debug\net5.0\ref\CpmPedidos.Repositorie.dll
 C:\Users\alex_\source\repos\CpmPedidos\CpmPedidos.Repositorie\obj\Debug\net5.0\CpmPedidos.Repositorie.pdb
+C:\Users\alex_\source\repos\CpmPedidos\CpmPedidos.Repositorie\bin\Debug\net5.0\CpmPedidos.Repositorie.runtimeconfig.json
+C:\Users\alex_\source\repos\CpmPedidos\CpmPedidos.Repositorie\bin\Debug\net5.0\CpmPedidos.Repositorie.runtimeconfig.dev.json
+C:\Users\alex_\source\repos\CpmPedidos\CpmPedidos.Repositorie\obj\Debug\net5.0\CpmPedidos.Repositorie.genruntimeconfig.cache
