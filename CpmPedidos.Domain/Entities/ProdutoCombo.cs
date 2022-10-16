@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CpmPedidos.Domain
 {
-    class ProdutoCombo
+    public class ProdutoCombo
     {
         public int IdProduto { get; set; }
         public virtual Produto Produto { get; set; }
