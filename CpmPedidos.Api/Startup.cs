@@ -27,7 +27,7 @@ namespace CpmPedidos.Api
         {
             Configuration = configuration;
         }
-
+        
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -38,10 +38,7 @@ namespace CpmPedidos.Api
                 ));
             DependecyInjection.Register(services);
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CpmPedidos.Api", Version = "v1" });
-            });
+           
 
         }
 
