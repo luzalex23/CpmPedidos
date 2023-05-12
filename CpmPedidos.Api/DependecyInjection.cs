@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using CpmPedidos.Interface.Repositories;
+using CpmPedidos.Repositorie;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +17,9 @@ namespace CpmPedidos.Api
 
         private static void RepositoryDependence(IServiceCollection serviceProvider)
         {
-            
+            serviceProvider.AddScoped<IProdutoRepository, ProdutoRepository>();
+            serviceProvider.AddScoped<IPedidoRepository, PedidoRepository>();
+            serviceProvider.AddScoped<ICidadeRepository, CidadeRepository>();
         }
     }
 }
